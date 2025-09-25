@@ -8,3 +8,5 @@ function saludar(nombre){
  function calculo (n1,n2){
  return n*1 n2
  }
+
+ 
