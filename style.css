@@ -1,0 +1,9 @@
+body {
+    font-family: Arial;
+    padding: 20px;
+  }
+  .piloto {
+    border: 1px solid #ccc;
+    padding: 15px;
+    max-width: 400px;
+  }
