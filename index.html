@@ -1,26 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <title> datos del piloto </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-</head>
-<nav class="container-fluid navbar navbar-expand-sm bg-dark navbar-dark">
-    <img id="rounded-pill"  src="red-bull-racing-logo-1.jpg" width="2" height="120">
-    <ul class="navbar-nav">
-        <li class="nav-item"> <a class="nav-link" href="https://openf1.org/#car-data">datos del coche </a>  </li>
-        <li class="nav-item"> <a class="nav-link" href="https://openf1.org/#roadmap"> hoja de ruta  </a>  </li>
-        <li class="nav-item"> <a class="nav-link" href="https://openf1.org/#laps"> vueltas </a>  </li>
-<body>
-    <h1>Información del Piloto</h1>
-    <div id="piloto" class="piloto">
-        <p>datos de los pilotos </p>
-    </div>
-   <script src="apiss.js"></script>
-</body>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datos del Piloto - Fórmula 1</title>
 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-color: #000; color: white;">
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <img src="red-bull-racing-logo-1.jpg" alt="Red Bull" width="120" height="80" class="rounded-pill">
+      <ul class="navbar-nav ms-3">
+        <li class="nav-item">
+          <a class="nav-link" href="https://openf1.org/#car-data" target="_blank">Datos del coche</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://openf1.org/#roadmap" target="_blank">Hoja de ruta</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://openf1.org/#laps" target="_blank">Vueltas</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container text-center mt-4">
+    <h1> Fórmula 1 </h1>
+    <p>Datos en vivo de la Fórmula 1</p>
+
+    <button class="btn btn-danger m-2" onclick="mostrarPilotos()">Ver pilotos</button>
+    <button class="btn btn-primary m-2" onclick="mostrarCarreras()">Ver carreras</button>
+
+    <h2 class="mt-4">Información del Piloto</h2>
+    <div id="piloto" class="mt-3">
+      <p>Haz clic en “Ver pilotos” para mostrar la lista.</p>
+    </div>
+
+    <div id="resultado" class="mt-4"></div>
+  </div>
+
+  
+  <script src="script.js"></script>
+</body>
 </html>
