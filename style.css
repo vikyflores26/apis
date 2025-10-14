@@ -100,3 +100,8 @@ footer {
   color: #999;
   font-size: 0.9rem;
 }
+
+#listaPilotos{
+  align-items: center;
+  
+}
