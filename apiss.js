@@ -7,6 +7,8 @@
  function calculo (n1,n2){
  return n*1 n2
  }*/
+
+ /*
   function mostrarPilotos() {
   document.getElementById("resultado").innerHTML = "<p>Cargando pilotos...</p>";
 
@@ -76,3 +78,48 @@ function mostrarCarreras() {
         "<p>Error al obtener los datos de las carreras.</p>";
     });
 }
+*/
+// Seleccionamos los elementos del DOM
+let botonPilotos = document.querySelector('#botonPilotos');
+let listaPilotos = document.querySelector('#listaPilotos');
+
+// Evento del botón
+botonPilotos.onclick = function () {
+    listaPilotos.innerHTML = "<p>Cargando pilotos...</p>";
+
+    // Llamada a la API
+    fetch('https://api.openf1.org/v1/drivers')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al obtener los datos');
+            }
+            return response.json();
+        })
+        .then(pilotos => {
+            listaPilotos.innerHTML = ""; // Limpiamos el contenedor
+
+            if (pilotos.length === 0) {
+                listaPilotos.innerHTML = "<p>No se encontraron pilotos.</p>";
+                return;
+            }
+
+            // Mostrar pilotos
+            pilotos.forEach(piloto => {
+                let tarjeta = document.createElement('div');
+                tarjeta.classList.add('tarjeta');
+                tarjeta.innerHTML = `
+                    <h3>${piloto.full_name || "Sin nombre"}</h3>
+                    <p><strong>Número:</strong> ${piloto.driver_number || "N/A"}</p>
+                    <p><strong>Nacionalidad:</strong> ${piloto.country_code || "Desconocida"}</p>
+                    <hr>
+                `;
+                listaPilotos.appendChild(tarjeta);
+            });
+        })
+        .catch(error => {
+            console.error(error);
+            listaPilotos.innerHTML = "<p>No se pudieron cargar los pilotos.</p>";
+        });
+};
+
+

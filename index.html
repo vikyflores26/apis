@@ -30,22 +30,11 @@
     </div>
   </nav>
 
-  <div class="container text-center mt-4">
-    <h1> Fórmula 1 </h1>
-    <p>Datos en vivo de la Fórmula 1</p>
-
-    <button class="btn btn-danger m-2" onclick="mostrarPilotos()">Ver pilotos</button>
-    <button class="btn btn-primary m-2" onclick="mostrarCarreras()">Ver carreras</button>
-
-    <h2 class="mt-4">Información del Piloto</h2>
-    <div id="piloto" class="mt-3">
-      <p>Haz clic en “Ver pilotos” para mostrar la lista.</p>
-    </div>
-
-    <div id="resultado" class="mt-4"></div>
-  </div>
-
+  <h2>Listado de Pilotos</h2>
+  <button id="botonPilotos">Ver Pilotos</button>
+  <div id="listaPilotos"></div>
   
-  <script src="script.js"></script>
+  
+  <script src="apiss.js"></script>
 </body>
 </html>
