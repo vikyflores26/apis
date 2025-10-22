@@ -121,5 +121,3 @@ botonPilotos.onclick = function () {
             listaPilotos.innerHTML = "<p>No se pudieron cargar los pilotos.</p>";
         });
 };
-
-
